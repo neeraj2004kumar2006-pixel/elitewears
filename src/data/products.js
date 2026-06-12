@@ -1,157 +1,342 @@
 import heroImg from '../assets/hero.webp';
-import prod1 from '../assets/product_1.webp';
-import prod2 from '../assets/product_2.webp';
-import prod3 from '../assets/product_3.webp';
-import prod4 from '../assets/product_4.webp';
-import prod5 from '../assets/product_5.webp';
-import prod6 from '../assets/product_6.webp';
-import prod7 from '../assets/product_7.webp';
-import prod8 from '../assets/product_8.webp';
-import prod9 from '../assets/product_9.webp';
-import prod10 from '../assets/product_10.webp';
-import prod11 from '../assets/product_11.webp';
-import prod12 from '../assets/product_12.webp';
-import prod13 from '../assets/product_13.webp';
-import prod14 from '../assets/product_14.webp';
-import prod15 from '../assets/product_15.webp';
-
+import prod_1_img_1 from '../assets/prod_1_img_1.webp';
+import prod_1_img_2 from '../assets/prod_1_img_2.webp';
+import prod_1_img_3 from '../assets/prod_1_img_3.webp';
+import prod_1_img_4 from '../assets/prod_1_img_4.webp';
+import prod_1_img_5 from '../assets/prod_1_img_5.webp';
+import prod_2_img_1 from '../assets/prod_2_img_1.webp';
+import prod_2_img_2 from '../assets/prod_2_img_2.webp';
+import prod_2_img_3 from '../assets/prod_2_img_3.webp';
+import prod_2_img_4 from '../assets/prod_2_img_4.webp';
+import prod_2_img_5 from '../assets/prod_2_img_5.webp';
+import prod_3_img_1 from '../assets/prod_3_img_1.webp';
+import prod_3_img_2 from '../assets/prod_3_img_2.webp';
+import prod_3_img_3 from '../assets/prod_3_img_3.webp';
+import prod_3_img_4 from '../assets/prod_3_img_4.webp';
+import prod_3_img_5 from '../assets/prod_3_img_5.webp';
+import prod_4_img_1 from '../assets/prod_4_img_1.webp';
+import prod_4_img_2 from '../assets/prod_4_img_2.webp';
+import prod_4_img_3 from '../assets/prod_4_img_3.webp';
+import prod_4_img_4 from '../assets/prod_4_img_4.webp';
+import prod_4_img_5 from '../assets/prod_4_img_5.webp';
+import prod_5_img_1 from '../assets/prod_5_img_1.webp';
+import prod_5_img_2 from '../assets/prod_5_img_2.webp';
+import prod_5_img_3 from '../assets/prod_5_img_3.webp';
+import prod_5_img_4 from '../assets/prod_5_img_4.webp';
+import prod_5_img_5 from '../assets/prod_5_img_5.webp';
+import prod_6_img_1 from '../assets/prod_6_img_1.webp';
+import prod_6_img_2 from '../assets/prod_6_img_2.webp';
+import prod_6_img_3 from '../assets/prod_6_img_3.webp';
+import prod_6_img_4 from '../assets/prod_6_img_4.webp';
+import prod_6_img_5 from '../assets/prod_6_img_5.webp';
+import prod_7_img_1 from '../assets/prod_7_img_1.webp';
+import prod_7_img_2 from '../assets/prod_7_img_2.webp';
+import prod_7_img_3 from '../assets/prod_7_img_3.webp';
+import prod_7_img_4 from '../assets/prod_7_img_4.webp';
+import prod_7_img_5 from '../assets/prod_7_img_5.webp';
+import prod_8_img_1 from '../assets/prod_8_img_1.webp';
+import prod_8_img_2 from '../assets/prod_8_img_2.webp';
+import prod_8_img_3 from '../assets/prod_8_img_3.webp';
+import prod_8_img_4 from '../assets/prod_8_img_4.webp';
+import prod_8_img_5 from '../assets/prod_8_img_5.webp';
+import prod_9_img_1 from '../assets/prod_9_img_1.webp';
+import prod_9_img_2 from '../assets/prod_9_img_2.webp';
+import prod_9_img_3 from '../assets/prod_9_img_3.webp';
+import prod_9_img_4 from '../assets/prod_9_img_4.webp';
+import prod_9_img_5 from '../assets/prod_9_img_5.webp';
+import prod_10_img_1 from '../assets/prod_10_img_1.webp';
+import prod_10_img_2 from '../assets/prod_10_img_2.webp';
+import prod_10_img_3 from '../assets/prod_10_img_3.webp';
+import prod_10_img_4 from '../assets/prod_10_img_4.webp';
+import prod_10_img_5 from '../assets/prod_10_img_5.webp';
+import prod_11_img_1 from '../assets/prod_11_img_1.webp';
+import prod_11_img_2 from '../assets/prod_11_img_2.webp';
+import prod_11_img_3 from '../assets/prod_11_img_3.webp';
+import prod_11_img_4 from '../assets/prod_11_img_4.webp';
+import prod_11_img_5 from '../assets/prod_11_img_5.webp';
+import prod_12_img_1 from '../assets/prod_12_img_1.webp';
+import prod_12_img_2 from '../assets/prod_12_img_2.webp';
+import prod_12_img_3 from '../assets/prod_12_img_3.webp';
+import prod_12_img_4 from '../assets/prod_12_img_4.webp';
+import prod_12_img_5 from '../assets/prod_12_img_5.webp';
+import prod_13_img_1 from '../assets/prod_13_img_1.webp';
+import prod_13_img_2 from '../assets/prod_13_img_2.webp';
+import prod_13_img_3 from '../assets/prod_13_img_3.webp';
+import prod_13_img_4 from '../assets/prod_13_img_4.webp';
+import prod_13_img_5 from '../assets/prod_13_img_5.webp';
+import prod_14_img_1 from '../assets/prod_14_img_1.webp';
+import prod_14_img_2 from '../assets/prod_14_img_2.webp';
+import prod_14_img_3 from '../assets/prod_14_img_3.webp';
+import prod_14_img_4 from '../assets/prod_14_img_4.webp';
+import prod_14_img_5 from '../assets/prod_14_img_5.webp';
+import prod_15_img_1 from '../assets/prod_15_img_1.webp';
+import prod_15_img_2 from '../assets/prod_15_img_2.webp';
+import prod_15_img_3 from '../assets/prod_15_img_3.webp';
+import prod_15_img_4 from '../assets/prod_15_img_4.webp';
+import prod_15_img_5 from '../assets/prod_15_img_5.webp';
+import prod_16_img_1 from '../assets/prod_16_img_1.webp';
+import prod_16_img_2 from '../assets/prod_16_img_2.webp';
+import prod_16_img_3 from '../assets/prod_16_img_3.webp';
+import prod_16_img_4 from '../assets/prod_16_img_4.webp';
+import prod_16_img_5 from '../assets/prod_16_img_5.webp';
+import prod_17_img_1 from '../assets/prod_17_img_1.webp';
+import prod_17_img_2 from '../assets/prod_17_img_2.webp';
+import prod_17_img_3 from '../assets/prod_17_img_3.webp';
+import prod_17_img_4 from '../assets/prod_17_img_4.webp';
+import prod_17_img_5 from '../assets/prod_17_img_5.webp';
+import prod_18_img_1 from '../assets/prod_18_img_1.webp';
+import prod_18_img_2 from '../assets/prod_18_img_2.webp';
+import prod_18_img_3 from '../assets/prod_18_img_3.webp';
+import prod_18_img_4 from '../assets/prod_18_img_4.webp';
+import prod_18_img_5 from '../assets/prod_18_img_5.webp';
+import prod_19_img_1 from '../assets/prod_19_img_1.webp';
+import prod_19_img_2 from '../assets/prod_19_img_2.webp';
+import prod_19_img_3 from '../assets/prod_19_img_3.webp';
+import prod_19_img_4 from '../assets/prod_19_img_4.webp';
+import prod_19_img_5 from '../assets/prod_19_img_5.webp';
+import prod_20_img_1 from '../assets/prod_20_img_1.webp';
+import prod_20_img_2 from '../assets/prod_20_img_2.webp';
+import prod_20_img_3 from '../assets/prod_20_img_3.webp';
+import prod_20_img_4 from '../assets/prod_20_img_4.webp';
+import prod_20_img_5 from '../assets/prod_20_img_5.webp';
+import prod_21_img_1 from '../assets/prod_21_img_1.webp';
+import prod_21_img_2 from '../assets/prod_21_img_2.webp';
+import prod_21_img_3 from '../assets/prod_21_img_3.webp';
+import prod_21_img_4 from '../assets/prod_21_img_4.webp';
+import prod_21_img_5 from '../assets/prod_21_img_5.webp';
+import prod_22_img_1 from '../assets/prod_22_img_1.webp';
+import prod_22_img_2 from '../assets/prod_22_img_2.webp';
+import prod_22_img_3 from '../assets/prod_22_img_3.webp';
+import prod_22_img_4 from '../assets/prod_22_img_4.webp';
+import prod_22_img_5 from '../assets/prod_22_img_5.webp';
+import prod_23_img_1 from '../assets/prod_23_img_1.webp';
+import prod_23_img_2 from '../assets/prod_23_img_2.webp';
+import prod_23_img_3 from '../assets/prod_23_img_3.webp';
+import prod_23_img_4 from '../assets/prod_23_img_4.webp';
+import prod_23_img_5 from '../assets/prod_23_img_5.webp';
+import prod_24_img_1 from '../assets/prod_24_img_1.webp';
+import prod_24_img_2 from '../assets/prod_24_img_2.webp';
+import prod_24_img_3 from '../assets/prod_24_img_3.webp';
+import prod_24_img_4 from '../assets/prod_24_img_4.webp';
+import prod_24_img_5 from '../assets/prod_24_img_5.webp';
 
 export const heroImage = heroImg;
 
 export const products = [
   {
-    id: '1',
-    name: 'Luxury Dress 1',
-    price: 6200,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Dresses & Gowns',
+    id: 'post_1778323100',
+    name: 'Evening Gowns Edition 1',
+    price: 3900,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Evening Gowns',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod1],
+    images: [prod_1_img_1, prod_1_img_2, prod_1_img_3, prod_1_img_4, prod_1_img_5],
   },
   {
-    id: '2',
-    name: 'Premium Coord Set 1',
-    price: 5700,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Coord Sets',
+    id: 'post_1778323780',
+    name: 'Luxury Co-ords Edition 1',
+    price: 8200,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Luxury Co-ords',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod2],
+    images: [prod_2_img_1, prod_2_img_2, prod_2_img_3, prod_2_img_4, prod_2_img_5],
   },
   {
-    id: '3',
-    name: 'Signature Trousers 1',
-    price: 6400,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Pants & Bottoms',
+    id: 'post_1778264840',
+    name: 'Premium Ethnic Edition 1',
+    price: 6300,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Premium Ethnic',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod3],
+    images: [prod_3_img_1, prod_3_img_2, prod_3_img_3, prod_3_img_4, prod_3_img_5],
   },
   {
-    id: '4',
-    name: 'Luxury Dress 2',
-    price: 3000,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Dresses & Gowns',
+    id: 'post_1778296533',
+    name: 'Signature Bottoms Edition 1',
+    price: 4200,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Signature Bottoms',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod4],
+    images: [prod_4_img_1, prod_4_img_2, prod_4_img_3, prod_4_img_4, prod_4_img_5],
   },
   {
-    id: '5',
-    name: 'Premium Coord Set 2',
-    price: 3100,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Coord Sets',
+    id: 'post_1778473338',
+    name: 'Exclusive Fits Edition 1',
+    price: 10200,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Exclusive Fits',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod5],
+    images: [prod_5_img_1, prod_5_img_2, prod_5_img_3, prod_5_img_4, prod_5_img_5],
   },
   {
-    id: '6',
-    name: 'Signature Trousers 2',
-    price: 4700,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Pants & Bottoms',
+    id: 'post_1778680022',
+    name: 'Timeless Classics Edition 1',
+    price: 7200,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Timeless Classics',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod6],
+    images: [prod_6_img_1, prod_6_img_2, prod_6_img_3, prod_6_img_4, prod_6_img_5],
   },
   {
-    id: '7',
-    name: 'Luxury Dress 3',
-    price: 2700,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Dresses & Gowns',
+    id: 'post_1778481866',
+    name: 'Evening Gowns Edition 2',
+    price: 6600,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Evening Gowns',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod7],
+    images: [prod_7_img_1, prod_7_img_2, prod_7_img_3, prod_7_img_4, prod_7_img_5],
   },
   {
-    id: '8',
-    name: 'Premium Coord Set 3',
-    price: 6400,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Coord Sets',
+    id: 'post_1778842076',
+    name: 'Luxury Co-ords Edition 2',
+    price: 5200,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Luxury Co-ords',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod8],
+    images: [prod_8_img_1, prod_8_img_2, prod_8_img_3, prod_8_img_4, prod_8_img_5],
   },
   {
-    id: '9',
-    name: 'Signature Trousers 3',
-    price: 6200,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Pants & Bottoms',
+    id: 'post_1778859230',
+    name: 'Premium Ethnic Edition 2',
+    price: 4300,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Premium Ethnic',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod9],
+    images: [prod_9_img_1, prod_9_img_2, prod_9_img_3, prod_9_img_4, prod_9_img_5],
   },
   {
-    id: '10',
-    name: 'Luxury Dress 4',
-    price: 2300,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Dresses & Gowns',
+    id: 'post_1778859323',
+    name: 'Signature Bottoms Edition 2',
+    price: 11100,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Signature Bottoms',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod10],
+    images: [prod_10_img_1, prod_10_img_2, prod_10_img_3, prod_10_img_4, prod_10_img_5],
   },
   {
-    id: '11',
-    name: 'Premium Coord Set 4',
-    price: 5700,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Coord Sets',
+    id: 'post_1778925802',
+    name: 'Exclusive Fits Edition 2',
+    price: 3700,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Exclusive Fits',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod11],
+    images: [prod_11_img_1, prod_11_img_2, prod_11_img_3, prod_11_img_4, prod_11_img_5],
   },
   {
-    id: '12',
-    name: 'Signature Trousers 4',
-    price: 5900,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Pants & Bottoms',
+    id: 'post_1778234298',
+    name: 'Timeless Classics Edition 2',
+    price: 11300,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Timeless Classics',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod12],
+    images: [prod_12_img_1, prod_12_img_2, prod_12_img_3, prod_12_img_4, prod_12_img_5],
   },
   {
-    id: '13',
-    name: 'Luxury Dress 5',
+    id: 'post_1778313699',
+    name: 'Evening Gowns Edition 3',
+    price: 8100,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Evening Gowns',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_13_img_1, prod_13_img_2, prod_13_img_3, prod_13_img_4, prod_13_img_5],
+  },
+  {
+    id: 'post_1778558041',
+    name: 'Luxury Co-ords Edition 3',
+    price: 6800,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Luxury Co-ords',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_14_img_1, prod_14_img_2, prod_14_img_3, prod_14_img_4, prod_14_img_5],
+  },
+  {
+    id: 'post_1778740582',
+    name: 'Premium Ethnic Edition 3',
     price: 3300,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Dresses & Gowns',
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Premium Ethnic',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod13],
+    images: [prod_15_img_1, prod_15_img_2, prod_15_img_3, prod_15_img_4, prod_15_img_5],
   },
   {
-    id: '14',
-    name: 'Premium Coord Set 5',
-    price: 4000,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Coord Sets',
+    id: 'post_1778902955',
+    name: 'Signature Bottoms Edition 3',
+    price: 4100,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Signature Bottoms',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod14],
+    images: [prod_16_img_1, prod_16_img_2, prod_16_img_3, prod_16_img_4, prod_16_img_5],
   },
   {
-    id: '15',
-    name: 'Signature Trousers 5',
-    price: 5700,
-    description: 'Experience true luxury with this premium piece from our exclusive collection. Crafted with the finest materials for a perfect fit.',
-    category: 'Pants & Bottoms',
+    id: 'post_1778298034',
+    name: 'Exclusive Fits Edition 3',
+    price: 9300,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Exclusive Fits',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    images: [prod15],
+    images: [prod_17_img_1, prod_17_img_2, prod_17_img_3, prod_17_img_4, prod_17_img_5],
+  },
+  {
+    id: 'post_1778428654',
+    name: 'Timeless Classics Edition 3',
+    price: 6400,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Timeless Classics',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_18_img_1, prod_18_img_2, prod_18_img_3, prod_18_img_4, prod_18_img_5],
+  },
+  {
+    id: 'post_1778557026',
+    name: 'Evening Gowns Edition 4',
+    price: 11900,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Evening Gowns',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_19_img_1, prod_19_img_2, prod_19_img_3, prod_19_img_4, prod_19_img_5],
+  },
+  {
+    id: 'post_1778652509',
+    name: 'Luxury Co-ords Edition 4',
+    price: 5900,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Luxury Co-ords',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_20_img_1, prod_20_img_2, prod_20_img_3, prod_20_img_4, prod_20_img_5],
+  },
+  {
+    id: 'post_1778665056',
+    name: 'Premium Ethnic Edition 4',
+    price: 11100,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Premium Ethnic',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_21_img_1, prod_21_img_2, prod_21_img_3, prod_21_img_4, prod_21_img_5],
+  },
+  {
+    id: 'post_1778860624',
+    name: 'Signature Bottoms Edition 4',
+    price: 7700,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Signature Bottoms',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_22_img_1, prod_22_img_2, prod_22_img_3, prod_22_img_4, prod_22_img_5],
+  },
+  {
+    id: 'post_1778988827',
+    name: 'Exclusive Fits Edition 4',
+    price: 9000,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Exclusive Fits',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_23_img_1, prod_23_img_2, prod_23_img_3, prod_23_img_4, prod_23_img_5],
+  },
+  {
+    id: 'post_1779026077',
+    name: 'Timeless Classics Edition 4',
+    price: 5600,
+    description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
+    category: 'Timeless Classics',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    images: [prod_24_img_1, prod_24_img_2, prod_24_img_3, prod_24_img_4, prod_24_img_5],
   }
 ];

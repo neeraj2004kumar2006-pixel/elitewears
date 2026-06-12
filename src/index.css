@@ -352,3 +352,41 @@ footer .logo {
   .detail-container { grid-template-columns: 1fr; }
   .narrow-container { padding: 30px 20px; margin: 30px 15px; }
 }
+
+/* Carousel */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+}
+.carousel-slide img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 15px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  transition: background 0.3s;
+}
+.dot.active {
+  background: var(--primary-black);
+}
