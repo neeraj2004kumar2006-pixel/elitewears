@@ -38,6 +38,17 @@ ul {
   list-style: none;
 }
 
+/* Promo Banner */
+.promo-banner {
+  background-color: var(--accent-gold);
+  color: var(--primary-black);
+  padding: 8px 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }

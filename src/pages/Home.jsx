@@ -33,7 +33,7 @@ function Home() {
 
       <section id="collection" className="collection-section">
         {categories.map((category, idx) => (
-          <div key={category} style={{ marginBottom: idx === categories.length - 1 ? '0' : '100px' }}>
+          <div id={category.replace(/\s+/g, '-')} key={category} style={{ marginBottom: idx === categories.length - 1 ? '0' : '100px', scrollMarginTop: '100px' }}>
             <h2 className="section-title" style={{ fontSize: '2rem', marginBottom: '40px' }}>{category}</h2>
             
             <div className="grid">

@@ -24,6 +24,9 @@ function App() {
   return (
     <Router>
       <div className="app-container">
+        <div className="promo-banner">
+          <marquee scrollamount="8">SPECIAL OFFER: ORDER 3 OR MORE PRODUCTS AND GET $9 OFF AT CHECKOUT!</marquee>
+        </div>
         <nav className="navbar dark-nav">
           <Link to="/" className="logo">
             <img src="/logo.svg" alt="Elite Wears Logo" className="nav-logo-img" />
@@ -31,7 +34,23 @@ function App() {
           
           <div className="nav-categories">
             {categories.map(cat => (
-              <a href={`/#${cat.replace(/\s+/g, '-')}`} key={cat} className="nav-cat-link">{cat}</a>
+              <a 
+                href={`/#${cat.replace(/\s+/g, '-')}`} 
+                key={cat} 
+                className="nav-cat-link"
+                onClick={(e) => {
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    const el = document.getElementById(cat.replace(/\s+/g, '-'));
+                    if (el) {
+                      const y = el.getBoundingClientRect().top + window.scrollY - 100;
+                      window.scrollTo({top: y, behavior: 'smooth'});
+                    }
+                  }
+                }}
+              >
+                {cat}
+              </a>
             ))}
           </div>
 

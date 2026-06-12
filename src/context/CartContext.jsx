@@ -47,8 +47,10 @@ export function CartProvider({ children }) {
     setCartItems([]);
   };
 
-  const cartTotal = cartItems.reduce((total, item) => total + (item.product.price * item.quantity), 0);
+  const subtotal = cartItems.reduce((total, item) => total + (item.product.price * item.quantity), 0);
   const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const discount = itemCount >= 3 ? 9 : 0;
+  const cartTotal = subtotal - discount;
 
   return (
     <CartContext.Provider value={{ 
@@ -57,6 +59,8 @@ export function CartProvider({ children }) {
       removeFromCart, 
       updateQuantity, 
       clearCart, 
+      subtotal,
+      discount,
       cartTotal, 
       itemCount,
       isCartOpen,

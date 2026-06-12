@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 export default function CartSidebar() {
-  const { cartItems, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const { cartItems, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, subtotal, discount, cartTotal } = useCart();
   const navigate = useNavigate();
 
   if (!isCartOpen) return null;
@@ -42,6 +42,16 @@ export default function CartSidebar() {
 
         {cartItems.length > 0 && (
           <div className="cart-footer">
+            <div className="cart-total" style={{fontSize: '1rem', color: 'var(--text-light)', marginBottom: '5px'}}>
+              <span>Subtotal</span>
+              <span>${subtotal.toLocaleString()}</span>
+            </div>
+            {discount > 0 && (
+              <div className="cart-total" style={{fontSize: '1rem', color: '#4caf50', marginBottom: '5px'}}>
+                <span>Discount (3+ Items)</span>
+                <span>-${discount.toLocaleString()}</span>
+              </div>
+            )}
             <div className="cart-total">
               <span>Total</span>
               <span>${cartTotal.toLocaleString()}</span>

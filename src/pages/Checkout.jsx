@@ -6,7 +6,7 @@ import { useCart } from '../context/CartContext';
 function Checkout() {
   const { user } = useUser();
   const navigate = useNavigate();
-  const { cartItems, cartTotal } = useCart();
+  const { cartItems, subtotal, discount, cartTotal } = useCart();
   
   const [formData, setFormData] = useState({
     fullName: user ? user.fullName || '' : '',
@@ -51,7 +51,17 @@ function Checkout() {
             <p>${(item.product.price * item.quantity).toLocaleString()}</p>
           </div>
         ))}
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px', fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--primary-white)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px', fontSize: '1rem', color: 'var(--text-light)' }}>
+          <span>Subtotal</span>
+          <span>${subtotal.toLocaleString()}</span>
+        </div>
+        {discount > 0 && (
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px', fontSize: '1rem', color: '#4caf50' }}>
+            <span>Discount (3+ Items)</span>
+            <span>-${discount.toLocaleString()}</span>
+          </div>
+        )}
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px', fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--primary-white)' }}>
           <span>Grand Total</span>
           <span>${cartTotal.toLocaleString()}</span>
         </div>
