@@ -48,7 +48,7 @@ function Home() {
                   </div>
                   <div className="product-info">
                     <h3 className="product-title">{product.name}</h3>
-                    <p className="product-price">₹{product.price.toLocaleString()}</p>
+                    <p className="product-price">${product.price.toLocaleString()}</p>
                   </div>
                 </div>
               ))}

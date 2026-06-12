@@ -32,7 +32,7 @@ function Payment() {
     <div className="narrow-container">
       <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Complete Payment</h2>
       <p style={{textAlign: 'center', color: 'var(--text-light)', marginBottom: '30px'}}>
-        Please scan the QR code to pay <strong>₹{product.price.toLocaleString()}</strong>.
+        Please scan the QR code to pay <strong>${product.price.toLocaleString()}</strong>.
       </p>
       
       <div className="qr-container">

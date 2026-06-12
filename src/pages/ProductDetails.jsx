@@ -30,19 +30,41 @@ function ProductDetails() {
     }
   };
 
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      const width = carouselRef.current.offsetWidth;
+      carouselRef.current.scrollBy({ left: -width, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      const width = carouselRef.current.offsetWidth;
+      carouselRef.current.scrollBy({ left: width, behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="container detail-container">
       <div>
-        <div 
-          className="carousel-container" 
-          ref={carouselRef} 
-          onScroll={handleScroll}
-        >
-          {product.images.map((img, idx) => (
-            <div key={idx} className="carousel-slide">
-              <img src={img} alt={`${product.name} view ${idx + 1}`} />
-            </div>
-          ))}
+        <div style={{ position: 'relative' }}>
+          {product.images.length > 1 && (
+            <>
+              <button className="carousel-btn left" onClick={scrollLeft}>&#10094;</button>
+              <button className="carousel-btn right" onClick={scrollRight}>&#10095;</button>
+            </>
+          )}
+          <div 
+            className="carousel-container" 
+            ref={carouselRef} 
+            onScroll={handleScroll}
+          >
+            {product.images.map((img, idx) => (
+              <div key={idx} className="carousel-slide">
+                <img src={img} alt={`${product.name} view ${idx + 1}`} />
+              </div>
+            ))}
+          </div>
         </div>
         {product.images.length > 1 && (
           <div className="carousel-dots">
@@ -58,7 +80,7 @@ function ProductDetails() {
 
       <div className="detail-info">
         <h1 className="detail-title">{product.name}</h1>
-        <div className="detail-price">₹{product.price.toLocaleString()}</div>
+        <div className="detail-price">${product.price.toLocaleString()}</div>
         <p className="detail-desc">{product.description}</p>
         
         <div style={{marginBottom: '10px', fontWeight: '500'}}>SELECT SIZE</div>
