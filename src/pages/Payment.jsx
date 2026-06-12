@@ -1,55 +1,45 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate, Navigate } from 'react-router-dom';
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 function Payment() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [file, setFile] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const { cartTotal, clearCart } = useCart();
+  
+  const formData = location.state?.formData;
 
-  if (!location.state || !location.state.customerData) {
-    return <Navigate to="/" />;
+  if (!formData || cartTotal === 0) {
+    navigate('/');
+    return null;
   }
 
-  const { product, selectedSize, customerData } = location.state;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!file) {
-      alert("Please upload a payment screenshot.");
-      return;
-    }
-    setLoading(true);
-    
-    // Simulate a brief submission delay for UX, then go straight to success
-    setTimeout(() => {
-      setLoading(false);
-      navigate('/success');
-    }, 1500);
+  const handleSimulatePayment = () => {
+    // Clear cart upon successful payment
+    clearCart();
+    navigate('/success');
   };
 
   return (
-    <div className="narrow-container">
-      <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Complete Payment</h2>
-      <p style={{textAlign: 'center', color: 'var(--text-light)', marginBottom: '30px'}}>
-        Please scan the QR code to pay <strong>${product.price.toLocaleString()}</strong>.
-      </p>
+    <div className="container narrow-container fade-in-up" style={{textAlign: 'center', paddingTop: '100px'}}>
+      <h1 className="detail-title">COMPLETE PAYMENT</h1>
       
-      <div className="qr-container">
-        {/* Actual QR Code provided by the user */}
-        <img src="/qr.png" alt="PayPal QR Code for Neeraj Poonia" style={{borderRadius: '10px'}} />
-        <p style={{marginTop: '10px', fontWeight: '500'}}>Scan to pay Neeraj Poonia</p>
+      <div style={{margin: '40px 0'}}>
+        {/* Replace this with an actual dynamic QR code generation or your static QR code */}
+        <img 
+          src="/qr.png" 
+          alt="Payment QR Code" 
+          style={{ width: '250px', height: '250px', borderRadius: '15px', border: '5px solid var(--primary-white)', objectFit: 'contain', backgroundColor: 'white' }} 
+        />
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Upload Payment Screenshot *</label>
-          <input type="file" className="form-control" accept="image/*" required onChange={(e) => setFile(e.target.files[0])} />
-        </div>
-        <button type="submit" className="btn btn-solid btn-full" disabled={loading}>
-          {loading ? 'SUBMITTING...' : 'SUBMIT ORDER'}
-        </button>
-      </form>
+      <p style={{textAlign: 'center', color: 'var(--text-light)', marginBottom: '30px'}}>
+        Please scan the QR code to pay <strong>${cartTotal.toLocaleString()}</strong>.
+      </p>
+
+      <button className="btn btn-solid" style={{padding: '15px 40px'}} onClick={handleSimulatePayment}>
+        I HAVE PAID
+      </button>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
+import { useCart } from '../context/CartContext';
 
 function ProductDetails() {
   const { id } = useParams();
@@ -8,17 +9,19 @@ function ProductDetails() {
   const [selectedSize, setSelectedSize] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef(null);
+  
+  const { addToCart } = useCart();
 
   const product = products.find(p => p.id === id);
 
   if (!product) return <div className="container" style={{paddingTop: '100px', textAlign: 'center'}}>Product not found.</div>;
 
-  const handleBuyNow = () => {
+  const handleAddToCart = () => {
     if (!selectedSize) {
       alert("Please select a size first.");
       return;
     }
-    navigate('/checkout', { state: { product, selectedSize } });
+    addToCart(product, selectedSize);
   };
 
   const handleScroll = () => {
@@ -45,7 +48,7 @@ function ProductDetails() {
   };
 
   return (
-    <div className="container detail-container">
+    <div className="container detail-container fade-in-up">
       <div>
         <div style={{ position: 'relative' }}>
           {product.images.length > 1 && (
@@ -78,7 +81,7 @@ function ProductDetails() {
         )}
       </div>
 
-      <div className="detail-info">
+      <div className="detail-info slide-in-right">
         <h1 className="detail-title">{product.name}</h1>
         <div className="detail-price">${product.price.toLocaleString()}</div>
         <p className="detail-desc">{product.description}</p>
@@ -96,8 +99,8 @@ function ProductDetails() {
           ))}
         </div>
         
-        <button className="btn btn-solid" style={{padding: '18px 0', fontSize: '1.1rem', letterSpacing: '3px', width: '100%'}} onClick={handleBuyNow}>
-          BUY NOW
+        <button className="btn btn-solid" style={{padding: '18px 0', fontSize: '1.1rem', letterSpacing: '3px', width: '100%'}} onClick={handleAddToCart}>
+          ADD TO CART
         </button>
       </div>
     </div>

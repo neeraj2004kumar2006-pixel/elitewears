@@ -1,58 +1,88 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '@clerk/clerk-react';
+import { useCart } from '../context/CartContext';
 
 function Checkout() {
-  const location = useLocation();
+  const { user } = useUser();
   const navigate = useNavigate();
+  const { cartItems, cartTotal } = useCart();
   
-  if (!location.state || !location.state.product) {
-    return <Navigate to="/" />;
-  }
-
-  const { product, selectedSize } = location.state;
   const [formData, setFormData] = useState({
-    customerName: '',
-    phoneNumber: '',
-    address: ''
+    fullName: user ? user.fullName || '' : '',
+    email: user && user.primaryEmailAddress ? user.primaryEmailAddress.emailAddress : '',
+    address: '',
+    city: '',
+    zip: ''
   });
+
+  if (cartItems.length === 0) {
+    return (
+      <div className="container" style={{paddingTop: '100px', textAlign: 'center'}}>
+        <h2>Your cart is empty.</h2>
+        <button className="btn btn-solid" style={{marginTop: '20px'}} onClick={() => navigate('/')}>
+          CONTINUE SHOPPING
+        </button>
+      </div>
+    );
+  }
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value});
   };
 
-  const handleProceed = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/payment', { state: { product, selectedSize, customerData: formData } });
+    navigate('/payment', { state: { formData } });
   };
 
   return (
-    <div className="narrow-container">
-      <h2 style={{marginBottom: '30px', textAlign: 'center'}}>Checkout Details</h2>
-      <div style={{marginBottom: '30px', padding: '20px', background: '#f9f9f9', border: '1px solid #eee'}}>
-        <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '10px'}}>
-          <strong>Item</strong>
-          <span>{product.name} (Size: {selectedSize})</span>
-        </div>
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-          <strong>Total</strong>
-          <span style={{color: 'var(--primary-gold)', fontWeight: '600'}}>${product.price.toLocaleString()}</span>
+    <div className="container narrow-container fade-in-up">
+      <h1 className="detail-title" style={{textAlign: 'center', marginBottom: '30px'}}>CHECKOUT</h1>
+      
+      <div className="checkout-summary">
+        <h3>Order Summary</h3>
+        {cartItems.map(item => (
+          <div key={item.id} style={{ display: 'flex', justifyContent: 'space-between', margin: '10px 0', borderBottom: '1px solid #333', paddingBottom: '10px' }}>
+            <div>
+              <p style={{fontWeight: 'bold', fontSize: '1rem'}}>{item.product.name}</p>
+              <p style={{fontSize: '0.8rem', color: 'var(--text-light)'}}>Size: {item.size} | Qty: {item.quantity}</p>
+            </div>
+            <p>${(item.product.price * item.quantity).toLocaleString()}</p>
+          </div>
+        ))}
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px', fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--primary-white)' }}>
+          <span>Grand Total</span>
+          <span>${cartTotal.toLocaleString()}</span>
         </div>
       </div>
 
-      <form onSubmit={handleProceed}>
+      <form onSubmit={handleSubmit} style={{marginTop: '40px'}}>
         <div className="form-group">
           <label>Full Name</label>
-          <input type="text" name="customerName" className="form-control" required onChange={handleChange} />
+          <input type="text" name="fullName" required value={formData.fullName} onChange={handleChange} />
         </div>
         <div className="form-group">
-          <label>Phone Number</label>
-          <input type="tel" name="phoneNumber" className="form-control" required onChange={handleChange} />
+          <label>Email Address</label>
+          <input type="email" name="email" required value={formData.email} onChange={handleChange} />
         </div>
         <div className="form-group">
-          <label>Delivery Address</label>
-          <textarea name="address" className="form-control" rows="3" required onChange={handleChange}></textarea>
+          <label>Shipping Address</label>
+          <input type="text" name="address" required value={formData.address} onChange={handleChange} />
         </div>
-        <button type="submit" className="btn btn-solid btn-full">PROCEED TO PAYMENT</button>
+        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px'}}>
+          <div className="form-group">
+            <label>City</label>
+            <input type="text" name="city" required value={formData.city} onChange={handleChange} />
+          </div>
+          <div className="form-group">
+            <label>ZIP / Postal Code</label>
+            <input type="text" name="zip" required value={formData.zip} onChange={handleChange} />
+          </div>
+        </div>
+        <button type="submit" className="btn btn-solid" style={{width: '100%', padding: '15px 0', marginTop: '20px'}}>
+          PROCEED TO PAYMENT
+        </button>
       </form>
     </div>
   );
