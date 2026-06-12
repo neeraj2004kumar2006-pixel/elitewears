@@ -1,17 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { products } from '../data/products';
+import { products, heroImage } from '../data/products';
 
 function Home() {
   const navigate = useNavigate();
 
+  // Extract unique categories
+  const categories = [...new Set(products.map(p => p.category))];
+
   return (
     <>
       <section className="hero">
-        {/* Fallback dark background or main cover image if available */}
+        {/* Full HD Hero Image */}
         <img 
-          src={products[0]?.images[0] || "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop"} 
-          alt="Luxury Fashion Hero" 
+          src={heroImage} 
+          alt="Premium Fashion Hero" 
+          style={{ opacity: 0.7 }}
         />
         <div className="hero-content">
           <p className="hero-subtitle">New Arrivals</p>
@@ -28,26 +32,29 @@ function Home() {
       </section>
 
       <section id="collection" className="collection-section">
-        <h2 className="section-title">THE COLLECTION</h2>
-        <p className="section-subtitle">Curated pieces for the modern wardrobe.</p>
-        
-        <div className="grid">
-          {products.map(product => (
-            <div 
-              key={product.id} 
-              className="product-card"
-              onClick={() => navigate(`/product/${product.id}`)}
-            >
-              <div className="product-img-wrapper">
-                <img src={product.images[0]} alt={product.name} />
-              </div>
-              <div className="product-info">
-                <h3 className="product-title">{product.name}</h3>
-                <p className="product-price">₹{product.price.toLocaleString()}</p>
-              </div>
+        {categories.map((category, idx) => (
+          <div key={category} style={{ marginBottom: idx === categories.length - 1 ? '0' : '100px' }}>
+            <h2 className="section-title" style={{ fontSize: '2rem', marginBottom: '40px' }}>{category}</h2>
+            
+            <div className="grid">
+              {products.filter(p => p.category === category).map(product => (
+                <div 
+                  key={product.id} 
+                  className="product-card"
+                  onClick={() => navigate(`/product/${product.id}`)}
+                >
+                  <div className="product-img-wrapper">
+                    <img src={product.images[0]} alt={product.name} />
+                  </div>
+                  <div className="product-info">
+                    <h3 className="product-title">{product.name}</h3>
+                    <p className="product-price">₹{product.price.toLocaleString()}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </section>
 
       <footer>
