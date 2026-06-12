@@ -126,7 +126,7 @@ export const products = [
   {
     id: 'post_1778323100',
     name: 'Evening Gowns Edition 1',
-    price: 3900,
+    price: 63,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Evening Gowns',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -135,7 +135,7 @@ export const products = [
   {
     id: 'post_1778323780',
     name: 'Luxury Co-ords Edition 1',
-    price: 8200,
+    price: 96,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Luxury Co-ords',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -144,7 +144,7 @@ export const products = [
   {
     id: 'post_1778264840',
     name: 'Premium Ethnic Edition 1',
-    price: 6300,
+    price: 126,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Premium Ethnic',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -153,7 +153,7 @@ export const products = [
   {
     id: 'post_1778296533',
     name: 'Signature Bottoms Edition 1',
-    price: 4200,
+    price: 142,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Signature Bottoms',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -162,7 +162,7 @@ export const products = [
   {
     id: 'post_1778473338',
     name: 'Exclusive Fits Edition 1',
-    price: 10200,
+    price: 56,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Exclusive Fits',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -171,7 +171,7 @@ export const products = [
   {
     id: 'post_1778680022',
     name: 'Timeless Classics Edition 1',
-    price: 7200,
+    price: 100,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Timeless Classics',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -180,7 +180,7 @@ export const products = [
   {
     id: 'post_1778481866',
     name: 'Evening Gowns Edition 2',
-    price: 6600,
+    price: 93,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Evening Gowns',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -189,7 +189,7 @@ export const products = [
   {
     id: 'post_1778842076',
     name: 'Luxury Co-ords Edition 2',
-    price: 5200,
+    price: 69,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Luxury Co-ords',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -198,7 +198,7 @@ export const products = [
   {
     id: 'post_1778859230',
     name: 'Premium Ethnic Edition 2',
-    price: 4300,
+    price: 61,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Premium Ethnic',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -207,7 +207,7 @@ export const products = [
   {
     id: 'post_1778859323',
     name: 'Signature Bottoms Edition 2',
-    price: 11100,
+    price: 141,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Signature Bottoms',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -216,7 +216,7 @@ export const products = [
   {
     id: 'post_1778925802',
     name: 'Exclusive Fits Edition 2',
-    price: 3700,
+    price: 102,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Exclusive Fits',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -225,7 +225,7 @@ export const products = [
   {
     id: 'post_1778234298',
     name: 'Timeless Classics Edition 2',
-    price: 11300,
+    price: 73,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Timeless Classics',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -234,7 +234,7 @@ export const products = [
   {
     id: 'post_1778313699',
     name: 'Evening Gowns Edition 3',
-    price: 8100,
+    price: 137,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Evening Gowns',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -243,7 +243,7 @@ export const products = [
   {
     id: 'post_1778558041',
     name: 'Luxury Co-ords Edition 3',
-    price: 6800,
+    price: 111,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Luxury Co-ords',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -252,7 +252,7 @@ export const products = [
   {
     id: 'post_1778740582',
     name: 'Premium Ethnic Edition 3',
-    price: 3300,
+    price: 93,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Premium Ethnic',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -261,7 +261,7 @@ export const products = [
   {
     id: 'post_1778902955',
     name: 'Signature Bottoms Edition 3',
-    price: 4100,
+    price: 88,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Signature Bottoms',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -270,7 +270,7 @@ export const products = [
   {
     id: 'post_1778298034',
     name: 'Exclusive Fits Edition 3',
-    price: 9300,
+    price: 66,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Exclusive Fits',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -279,7 +279,7 @@ export const products = [
   {
     id: 'post_1778428654',
     name: 'Timeless Classics Edition 3',
-    price: 6400,
+    price: 75,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Timeless Classics',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -288,7 +288,7 @@ export const products = [
   {
     id: 'post_1778557026',
     name: 'Evening Gowns Edition 4',
-    price: 11900,
+    price: 135,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Evening Gowns',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -297,7 +297,7 @@ export const products = [
   {
     id: 'post_1778652509',
     name: 'Luxury Co-ords Edition 4',
-    price: 5900,
+    price: 145,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Luxury Co-ords',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -306,7 +306,7 @@ export const products = [
   {
     id: 'post_1778665056',
     name: 'Premium Ethnic Edition 4',
-    price: 11100,
+    price: 76,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Premium Ethnic',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -315,7 +315,7 @@ export const products = [
   {
     id: 'post_1778860624',
     name: 'Signature Bottoms Edition 4',
-    price: 7700,
+    price: 131,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Signature Bottoms',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -324,7 +324,7 @@ export const products = [
   {
     id: 'post_1778988827',
     name: 'Exclusive Fits Edition 4',
-    price: 9000,
+    price: 68,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Exclusive Fits',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
@@ -333,7 +333,7 @@ export const products = [
   {
     id: 'post_1779026077',
     name: 'Timeless Classics Edition 4',
-    price: 5600,
+    price: 141,
     description: 'Experience absolute luxury with this premium masterpiece. Designed with meticulous attention to detail and crafted from the finest materials. Swipe to view all angles.',
     category: 'Timeless Classics',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
