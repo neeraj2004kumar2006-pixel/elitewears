@@ -26,7 +26,7 @@ function ProductDetails() {
       </div>
       <div className="detail-info">
         <h1 className="detail-title">{product.name}</h1>
-        <div className="detail-price">${product.price.toLocaleString()}</div>
+        <div className="detail-price">₹{product.price.toLocaleString()}</div>
         <p className="detail-desc">{product.description}</p>
         
         <div style={{marginBottom: '10px', fontWeight: '500'}}>SELECT SIZE</div>
