@@ -1,39 +1,39 @@
-// REPLACE THIS DATA WITH YOUR ACTUAL INSTAGRAM POST DETAILS
-// 1. Download your images from Instagram and put them in `frontend/src/assets/`
-// 2. Change the `images` array below to point to your local assets (e.g., imported images)
-// 3. Update the names, prices, descriptions, and sizes.
+import prod1 from '../assets/product_1.webp';
+import prod2 from '../assets/product_2.webp';
+import prod3 from '../assets/product_3.webp';
+import prod4 from '../assets/product_4.webp';
 
 export const products = [
   {
     id: '1',
-    name: 'Instagram Post Item 1',
+    name: 'Turkish Fit 1',
     price: 1500,
-    description: 'Replace this description with the caption from your Instagram post. Premium quality material and luxury fit.',
+    description: 'Premium Turkish fit. Where Fashion Looks Expensive.',
     sizes: ['S', 'M', 'L'],
-    images: ['https://images.unsplash.com/photo-1515347619362-e9fd0f10134f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
+    images: [prod1],
   },
   {
     id: '2',
-    name: 'Instagram Post Item 2',
+    name: 'Berlin Streetwear',
     price: 2200,
-    description: 'Replace this description with the caption from your Instagram post. Elegant and sophisticated design.',
+    description: 'Elegant Berlin style fit. Premium quality material.',
     sizes: ['M', 'L', 'XL'],
-    images: ['https://images.unsplash.com/photo-1550639525-c97d455acf70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
+    images: [prod2],
   },
   {
     id: '3',
-    name: 'Instagram Post Item 3',
+    name: 'Paris Luxury',
     price: 850,
-    description: 'Replace this description with the caption from your Instagram post. Minimalist everyday luxury wear.',
+    description: 'Minimalist everyday luxury wear straight from Paris.',
     sizes: ['XS', 'S', 'M'],
-    images: ['https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
+    images: [prod3],
   },
   {
     id: '4',
-    name: 'Instagram Post Item 4',
+    name: 'France Collection',
     price: 3100,
-    description: 'Replace this description with the caption from your Instagram post. The ultimate luxury statement piece.',
+    description: 'The ultimate luxury statement piece from our France collection.',
     sizes: ['One Size'],
-    images: ['https://images.unsplash.com/photo-1596783042455-ce065a0db8bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
+    images: [prod4],
   }
 ];
