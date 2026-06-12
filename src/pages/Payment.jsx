@@ -36,9 +36,9 @@ function Payment() {
       </p>
       
       <div className="qr-container">
-        {/* Placeholder for real QR code */}
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="PayPal QR Code" />
-        <p style={{marginTop: '10px', fontWeight: '500'}}>Or send via PayPal to: payments@elitewears.com</p>
+        {/* Actual QR Code provided by the user */}
+        <img src="/qr.png" alt="PayPal QR Code for Neeraj Poonia" style={{borderRadius: '10px'}} />
+        <p style={{marginTop: '10px', fontWeight: '500'}}>Scan to pay Neeraj Poonia</p>
       </div>
 
       <form onSubmit={handleSubmit}>
