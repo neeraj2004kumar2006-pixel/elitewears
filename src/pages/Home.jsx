@@ -59,7 +59,7 @@ function Home() {
 
       <footer>
         <div className="logo">
-          <img src="/logo.png" alt="Elite Wears Logo" style={{height: '60px', filter: 'invert(1)'}} />
+          <img src="/logo.svg" alt="Elite Wears Logo" style={{height: '60px'}} />
         </div>
         <p style={{color: 'var(--text-light)', marginTop: '20px', fontSize: '0.9rem', letterSpacing: '1px'}}>© {new Date().getFullYear()} ELITE WEARS. ALL RIGHTS RESERVED.</p>
       </footer>

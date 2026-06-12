@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6c875" />
+      <stop offset="50%" stop-color="#c5a059" />
+      <stop offset="100%" stop-color="#9a7b4f" />
+    </linearGradient>
+  </defs>
+
+  <!-- E and W Monogram -->
+  <g transform="translate(20, 25)">
+    <!-- Letter E -->
+    <path d="M70,10 L30,10 L30,90 L70,90 M30,50 L60,50" 
+          fill="none" 
+          stroke="url(#goldGradient)" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <!-- Letter W -->
+    <path d="M50,20 L65,80 L80,40 L95,80 L110,20" 
+          fill="none" 
+          stroke="#ffffff" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </g>
+
+  <!-- ELITE WEARS Text -->
+  <text x="140" y="75" 
+        font-family="'Cinzel', serif, sans-serif" 
+        font-size="36" 
+        font-weight="bold" 
+        letter-spacing="6" 
+        fill="#ffffff">
+    ELITE
+  </text>
+  
+  <text x="140" y="115" 
+        font-family="'Jost', sans-serif" 
+        font-size="20" 
+        letter-spacing="12" 
+        font-weight="300"
+        fill="#c5a059">
+    WEARS
+  </text>
+</svg>

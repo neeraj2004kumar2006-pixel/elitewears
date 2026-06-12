@@ -26,7 +26,7 @@ function App() {
       <div className="app-container">
         <nav className="navbar dark-nav">
           <Link to="/" className="logo">
-            <img src="/logo.png" alt="Elite Wears Logo" className="nav-logo-img" />
+            <img src="/logo.svg" alt="Elite Wears Logo" className="nav-logo-img" />
           </Link>
           
           <div className="nav-categories">
