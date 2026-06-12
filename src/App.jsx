@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
@@ -11,9 +12,18 @@ function App() {
     <Router>
       <div className="app-container">
         <nav className="navbar">
+          {/* Logo can be changed to an image if you place logo.png in public folder */}
           <Link to="/" className="logo">ELITE WEARS</Link>
-          <div className="nav-links">
+          <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <Link to="/" style={{ fontWeight: 500 }}>COLLECTIONS</Link>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="btn btn-solid" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>Sign In</button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </nav>
         
