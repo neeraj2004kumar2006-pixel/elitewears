@@ -1,9 +1,9 @@
 # Elite Wears Deployment Guide
 
-This document outlines how to deploy the Elite Wears MVP application.
+This document outlines how to deploy the Elite Wears application.
 
 ## 1. Backend Deployment (Render)
-The backend is an Express Node.js application.
+The backend is an Express Node.js application that uses local storage (JSON file and `uploads` folder) for simplicity, as requested.
 
 1. **Push your code to GitHub.** Ensure the `backend` folder is at the root or you specify the root directory in Render.
 2. Go to [Render](https://render.com) and create a new **Web Service**.
@@ -13,10 +13,9 @@ The backend is an Express Node.js application.
    - **Environment**: Node
    - **Build Command**: `npm install`
    - **Start Command**: `node server.js`
-5. **Environment Variables**: Add the following:
-   - `PORT`: `5000` (or whatever Render uses)
-   - `MONGO_URI`: Your MongoDB Atlas connection string.
-6. Click **Create Web Service**.
+5. Click **Create Web Service**.
+
+> **Warning:** Render's free tier spins down after inactivity and wipes the local disk. Your `orders.json` and `uploads/` folder will be reset periodically. To prevent this, you would need to upgrade to a persistent disk on Render, or adapt the code to use external storage (like S3/MongoDB) in the future.
 
 ## 2. Frontend Deployment (Vercel)
 The frontend is a React application built with Vite.
@@ -29,9 +28,8 @@ The frontend is a React application built with Vite.
    - **Build Command**: `npm run build`
    - **Output Directory**: `dist`
 4. **Environment Variables**: Add the backend URL so the frontend can hit it.
-   - Note: In this MVP, the API endpoints in the components (e.g. `http://localhost:5000`) need to be updated to point to the deployed Render backend URL. A good practice is to create a `.env.production` in `frontend` setting `VITE_API_URL=https://your-render-app.onrender.com/api` and update `axios.get` calls.
+   - You need to update the frontend components' `axios` calls (`http://localhost:5000/api/orders`) to point to the deployed Render backend URL.
 5. Click **Deploy**.
 
 ## Post-Deployment Configurations
-- **Seed Products:** The database is empty initially. Use Postman or create a temporary script to POST sample products to the `api/products` endpoint so your catalog populates.
-- **Image Storage:** The MVP uses local Multer storage (`/uploads`). On Render's free tier, these will disappear on server restart. For production, integrate AWS S3, Cloudinary, or similar in `routes/orders.js`.
+- **Update Products:** The products are hardcoded in `frontend/src/data/products.js`. Download your Instagram images to `frontend/src/assets/`, update the paths in the data file, and adjust the titles/prices/descriptions before pushing to production.

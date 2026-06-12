@@ -5,7 +5,6 @@ import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
 import Payment from './pages/Payment';
 import Success from './pages/Success';
-import SimpleAdmin from './pages/SimpleAdmin';
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
         <nav className="navbar">
           <Link to="/" className="logo">ELITE WEARS</Link>
           <div className="nav-links">
-            <Link to="/" style={{ marginRight: '20px', fontWeight: 500 }}>CATALOG</Link>
-            <Link to="/admin" style={{ fontWeight: 500, fontSize: '0.8rem', color: '#777' }}>ADMIN</Link>
+            <Link to="/" style={{ fontWeight: 500 }}>COLLECTIONS</Link>
           </div>
         </nav>
         
@@ -26,7 +24,6 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/success" element={<Success />} />
-            <Route path="/admin" element={<SimpleAdmin />} />
           </Routes>
         </main>
       </div>

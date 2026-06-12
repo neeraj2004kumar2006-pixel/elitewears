@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const Order = require('../models/Order');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-// Ensure uploads directory exists
+// Ensure directories and files exist
 const uploadDir = path.join(__dirname, '../uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
+if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+
+const ordersFile = path.join(__dirname, '../orders.json');
+if (!fs.existsSync(ordersFile)) fs.writeFileSync(ordersFile, JSON.stringify([]));
 
 // Multer config
 const storage = multer.diskStorage({
@@ -23,41 +23,30 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-// Create order with payment screenshot
-router.post('/', upload.single('paymentScreenshot'), async (req, res) => {
+// Create order
+router.post('/', upload.single('paymentScreenshot'), (req, res) => {
   try {
     const orderData = req.body;
+    
+    const newOrder = {
+      id: Date.now().toString(),
+      ...orderData,
+      status: 'Pending Verification',
+      createdAt: new Date().toISOString()
+    };
+
     if (req.file) {
-      orderData.paymentScreenshotUrl = `/uploads/${req.file.filename}`;
+      newOrder.paymentScreenshotUrl = `/uploads/${req.file.filename}`;
     }
-    const order = new Order(orderData);
-    const newOrder = await order.save();
-    res.status(201).json(newOrder);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
 
-// Get all orders (Simple Admin)
-router.get('/', async (req, res) => {
-  try {
-    const orders = await Order.find().populate('product').sort({ createdAt: -1 });
-    res.json(orders);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
+    const currentOrders = JSON.parse(fs.readFileSync(ordersFile, 'utf8'));
+    currentOrders.push(newOrder);
+    fs.writeFileSync(ordersFile, JSON.stringify(currentOrders, null, 2));
 
-// Update order status (Simple Admin)
-router.patch('/:id/status', async (req, res) => {
-  try {
-    const order = await Order.findById(req.params.id);
-    if (!order) return res.status(404).json({ message: 'Order not found' });
-    order.status = req.body.status;
-    const updatedOrder = await order.save();
-    res.json(updatedOrder);
+    res.status(201).json({ message: 'Order submitted successfully', orderId: newOrder.id });
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    console.error(err);
+    res.status(500).json({ message: 'Failed to process order' });
   }
 });
 

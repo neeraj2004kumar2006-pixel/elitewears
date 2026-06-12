@@ -28,8 +28,8 @@ function Payment() {
     formData.append('address', customerData.address);
     formData.append('size', selectedSize);
     
-    // We append product ID. If using fallback, it might not be a valid Mongo ObjectId, but backend might accept if modified or we just rely on local seed.
-    formData.append('product', product._id); 
+    // We append product ID.
+    formData.append('product', product.id); 
     formData.append('transactionId', transactionId);
     formData.append('paymentScreenshot', file);
 
