@@ -12,8 +12,9 @@ function App() {
     <Router>
       <div className="app-container">
         <nav className="navbar">
-          {/* Logo can be changed to an image if you place logo.png in public folder */}
-          <Link to="/" className="logo">ELITE WEARS</Link>
+          <Link to="/" className="logo">
+            <img src="/logo.png" alt="Elite Wears Logo" style={{height: '35px', width: 'auto'}} />
+          </Link>
           <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <Link to="/" style={{ fontWeight: 500 }}>COLLECTIONS</Link>
             <SignedOut>
