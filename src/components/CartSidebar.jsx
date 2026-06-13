@@ -1,10 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser, useClerk } from '@clerk/clerk-react';
 import { useCart } from '../context/CartContext';
 
 export default function CartSidebar() {
   const { cartItems, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, subtotal, discount, cartTotal } = useCart();
   const navigate = useNavigate();
+  const { isSignedIn } = useUser();
+  const clerk = useClerk();
+
+  const handleCheckout = () => {
+    setIsCartOpen(false);
+    if (!isSignedIn) {
+      clerk.openSignIn();
+    } else {
+      navigate('/checkout');
+    }
+  };
 
   if (!isCartOpen) return null;
 
@@ -58,10 +70,7 @@ export default function CartSidebar() {
             </div>
             <button 
               className="btn btn-solid checkout-btn" 
-              onClick={() => {
-                setIsCartOpen(false);
-                navigate('/checkout');
-              }}
+              onClick={handleCheckout}
             >
               PROCEED TO CHECKOUT
             </button>

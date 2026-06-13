@@ -2,10 +2,13 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
+import { useUser } from '@clerk/clerk-react';
+
 function Payment() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { cartTotal, clearCart } = useCart();
+  const { cartItems, cartTotal, discount, clearCart } = useCart();
+  const { user } = useUser();
   
   const formData = location.state?.formData;
 
@@ -15,6 +18,19 @@ function Payment() {
   }
 
   const handleSimulatePayment = () => {
+    // Save order to mock DB (localStorage)
+    const newOrder = {
+      id: 'ORD-' + Math.floor(Math.random() * 1000000),
+      userId: user ? user.id : 'guest',
+      date: new Date().toISOString(),
+      items: cartItems,
+      total: cartTotal,
+      discount: discount,
+      shipping: formData
+    };
+    const savedOrders = JSON.parse(localStorage.getItem('elite_orders') || '[]');
+    localStorage.setItem('elite_orders', JSON.stringify([newOrder, ...savedOrders]));
+
     // Clear cart upon successful payment
     clearCart();
     navigate('/success');

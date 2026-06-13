@@ -6,6 +6,7 @@ import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
 import Payment from './pages/Payment';
 import Success from './pages/Success';
+import Orders from './pages/Orders';
 import CartSidebar from './components/CartSidebar';
 import { useCart } from './context/CartContext';
 
@@ -65,6 +66,7 @@ function App() {
               </SignInButton>
             </SignedOut>
             <SignedIn>
+              <Link to="/orders" style={{fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '500'}}>My Orders</Link>
               <UserButton />
             </SignedIn>
           </div>
@@ -79,6 +81,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/success" element={<Success />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </main>
       </div>
